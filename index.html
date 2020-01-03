@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function computerPlay(){
+            let compChoice = ['rock','paper','scissors'];
+            var randComp = compChoice[Math.floor(Math.random()*compChoice.length)];  
+            return(randComp);
+            console.log(randComp);
+        }
+        function computerPlay() {
+            let compChoice = ['rock', 'paper', 'scissors'];
+            var randComp = compChoice[Math.floor(Math.random() * compChoice.length)];
+            return (randComp);
+            console.log(randComp);
+        }
+        var scorePlayer = 0;
+        var scoreComputer = 0;
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+             return ('This is a tie.')
+            } else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection.toUpperCase() == 'SCISSORS') {
+            scorePlayer++;
+            return ('You Win! Rock Beats Scissors.')
+            } else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection.toUpperCase() == 'PAPER') {
+             scoreComputer++;
+             return ('Computer Wins! Paper Beats Rock')
+            } else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection.toUpperCase() == 'PAPER') {
+             scorePlayer++;
+            return ('You Win! Scissors Beats Paper.')
+            } else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection.toUpperCase() == 'ROCK') {
+             scoreComputer++;
+             return ('Computer Wins! Rock Beats Scissors')
+            } else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection.toUpperCase() == 'ROCK') {
+            scorePlayer++;
+            return ('You Win! Paper Beats Rock.')
+            } else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection.toUpperCase() == 'SCISSORS') {
+            scoreComputer++;
+            return ('Computer Wins! Scissors Beats Paper')
+            }
+        }
+        function game() { 
+            var i = 0;
+            while (i < 6) {
+             var playerSelection = prompt('What is your choice?');
+             var computerSelection = computerPlay();
+                ++i;
+            console.log(playRound(playerSelection, computerSelection));
+            console.log('Computer Score: '+ scoreComputer);
+            console.log('Your score:  ' + scorePlayer);
+            }
+        console.log('This game is over')
+        }
+        game();
+    </script>
+</head>
